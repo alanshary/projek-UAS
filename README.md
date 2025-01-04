@@ -3,220 +3,85 @@
 ## Profil
 | Variable | Isi |
 | -------- | --- |
-| **Nama** | Gilar Sumilar |
-| **NIM** | 312210407 |
+| **Nama** | Zaid Al Anshary |
+| **NIM** | 312410315 |
 | **Kelas** | TI.22.A.4 |
 | **Mata Kuliah** | Bahasa Pemrograman |
 | **Link vidio Penjelasan** | https://www.youtube.com/watch?v=8MzmLtOLDOk |
-| **Link Download PDF** | https://drive.google.com/file/d/1QJroGIO46l6eO6xxMBtiEoEDg7dTNLRL/view?usp=sharing |
-
-# UAS
-
-#### Buatlah package dan modul dengan struktur seperti berikut:
-- daftar_nilai.py berisi modul untuk:
-tambah_data, ubah_data, hapus_data,
-dan cari_data
-- view_nilai.py berisi modul untuk:
-cetak_daftar_nilai, cetak_hasil_pencarian
-- input_nilai.py berisi modul untuk:
-input_data yang meminta pengguna
-memasukkan data.
-- main.py berisi program utama (menu
-pilihan yang memanggil semua menu
-yang ada)
-
-### 1. `main.py` Berisi program utama dengan menu `menu = input("[(T)ambah, (I)nputNilai, (L)ihat, (C)ari, (H)apus, (U)bah, (K)eluar] : ")`
-
-``` Python
-from view import input_nilai, view_nilai
-from model import daftar_nilai
-
-data = daftar_nilai.Data_mahasiswa()
-
-print("="*20)
-print("|PROGRAM INPUT DATA|")
-print("="*20)
-
-while True: 
-    print()
-    menu = input("[(T)ambah, (I)nputNilai, (L)ihat, (C)ari, (H)apus, (U)bah, (K)eluar] : ")
-    print("~"*78)
-    print()
-
-    if menu.lower() == 't':
-        data.tambah()
 
 
-    elif menu.lower() == "i":
-        input_nilai.nilai()
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/71de6bd92acac08a813c4d8179a0606b5037b7cd/Image/tugas.jpg)
 
+- Class " Data " 
+ 
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/b4c7185e51c5fabb70c80fe6a282a6c0386b8a15/Image/class%20data.jpg)
 
-    elif menu.lower() == 'l':
-        if data.nama:
-            view_nilai.lihat()
-        else:
-            print("BELUM ADA DATA!, pilih [T/t] untuk menambah data")  
+Deskripsi: Class Data digunakan untuk menyimpan informasi tentang mahasiswa, termasuk nama, NIM (Nomor Induk Mahasiswa), dan nilai UAS.
 
-    elif menu.lower() == 'c':
-        if data.nama:
-            data.cari()
-        else:
-            print("BELUM ADA DATA!, pilih [T/t] untuk menambah data") 
-            
+Metode __init__: Ini adalah konstruktor yang dipanggil saat objek dari class Data dibuat. Ia menerima tiga parameter:
 
-    elif menu.lower() == "h":
-        data.hapus(data.nama)
+nama: Nama mahasiswa.
 
+nim: Nomor Induk Mahasiswa.
 
-    elif menu.lower() == "u":
-        data.ubah(data.nama) 
+nilai_uas: Nilai UAS yang diperoleh mahasiswa.
 
-    elif menu.lower() == "k":
-        print("Program selesai, Terima Kasih :) ")
-        break
+Atribut: Atribut self.nama, self.nim, dan self.nilai_uas menyimpan nilai yang diterima dari parameter.
 
-    else:
-        print("\n INPUT {} TIDAK ADA!, Silakan pilih [T/L/I/H/U/K] untuk menjalankan program!".format(menu))
-```
-### Penjelasan 
-Di program utama ini terdapat modul yg di import ke file `from view import input_nilai, view_nilai` &
-`from model import daftar_nilai`. Modul memungkinkan Anda menulis kode yang terdiri dari beberapa file dan membaginya menjadi bagian-bagian yang lebih kecil, yang dapat diimport sesuai kebutuhan.
+- Class " View " 
 
-#### Contoh tampilan menu :
-![1](Picture/Gambar1.png)
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/804b9c41bc554e0ff189d6b493c5b034950ff675/Image/class%20view.jpg)
 
-### 2. `daftar_nilai.py`
-Di dalam file daftar nilai ini terdapat sourcecode `input("[(T)ambah, (C)ari, (H)apus, (U)bah] ")`
+Deskripsi: Class View bertanggung jawab untuk interaksi dengan pengguna, termasuk pengambilan input dan menampilkan output.
 
-``` Python
-class Data_mahasiswa:
-    nama = []
-    nim = []
-    uts = []
-    uas = []
-    tugas = []
+Metode input_data:
 
-    # Tambah data
-    def tambah(self):
-        print("Tambah data\n")
-        nama    = input("Nama           : ")
-        self.nama.append(nama)
-        nim     = int(input("NIM            : "))
-        self.nim.append(nim)
-        uts     = 0
-        self.uts.append(uts)
-        uas     = 0
-        self.uas.append(uas)
-        tugas   = 0
-        self.tugas.append(tugas)
+Mengambil input dari pengguna untuk nama, NIM, dan nilai UAS.
 
-        print("\nData {0} berhasil di tambahkan".format(nama))
-                
-    # Menghapus inputan nama
-    def hapus(self, nama):
-        print("Hapus data inputan")
-        print("="*15)
-        nama = (input("\nMasukan Nama berdasarkan inputan : "))
-        if nama in self.nama:
-            print("Data {0} berhasil di hapus".format(nama))
-            index = self.nama.index(nama)
-            del self.nama[index]
-            del self.nim[index]
-            del self.uts[index]
-            del self.uas[index]
-            del self.tugas[index]
-        else:
-            print("NAMA {0} TIDAK ADA!".format(nama))
-    
-        # Mengubah data NIM
-    def ubah(self, nama):
-        print("Ubah data NIM")
-        print("="*15)
-        input_nama = input("Masukan Nama : ")
-        if input_nama in nama:
-            index = nama.index(input_nama)
-            self.nim[index]     = int(input("NIM            : "))
+Menggunakan strip() untuk menghapus spasi di awal dan akhir input.
 
-            print("\nNIM Data {0} berhasil di ubah".format(input_nama))
-        else:
-            print("NAMA {0} TIDAK ADA! / ANDA BELUM MENAMBAHKAN DATA".format(input_nama))
-            
-        # Mencari data yg sudah di input 
-    def cari(self):
-        print("Mencari data")
-        print("="*15)
-        nama = (input("\nMasukan Nama yg ingin di cari : "))
-        if nama in self.nama:
-            index = self.nama.index(nama)
-            print(f"Nama Mahasiswa: {self.nama[index]}")
-            print(f"NIM Mahasiswa : {self.nim[index]}")
-            print(f"Nilai UTS     : {self.uts[index]}")
-            print(f"Nilai UAS     : {self.uas[index]}")
-            print(f"Nilai TUGAS   : {self.tugas[index]}")
-        else:
-            print("NAMA {0} TIDAK ADA!".format(nama))
-```
+Mengembalikan objek Data yang baru dibuat dengan informasi yang dimasukkan.
 
-### Penjelasan 
-Pada bagian dari `daftar_nilai.py` berisi program dengan perintah menambahkan data, hapus data, ubah data NIM,
-dan mencari salah satu data yg sudah di input.
+Metode tampilkan_data:
 
-#### Tampilan output tambah data :
-![2](Picture/Gambar2.png)
-#### Tampilan output hapus data :
-![3](Picture/Gambar3.png) 
-#### Tampilan output ubah NIM :
-![4](Picture/Gambar4.png)
-#### Tampilan output cari data :
-![5](Picture/Gambar5.png)
+Menerima daftar objek Data (data_list) dan menyiapkan data untuk ditampilkan dalam format tabel.
 
+Membuat header tabel dengan kolom "No", "Nama", "NIM", dan "Nilai UAS".
 
-### 3. `view_nilai.py` berisi sourcode yg berfungsi menampilkan seluruh data
+Menggunakan enumerate untuk menambahkan nomor urut pada setiap data.
 
-``` Python
-from model import daftar_nilai
+Memanggil fungsi tampilkan_tabel untuk menampilkan data dalam format tabel.
 
-data = daftar_nilai.Data_mahasiswa()
+- Fungsi " Tampilkan Table "
 
-# Menampilkan seluruh data 
-def lihat():
-    for i in range(len(data.nama)):
-        print(f"\nData ke -{i+1}")
-        print(f"Nama Mahasiswa: {data.nama[i]}")
-        print(f"NIM Mahasiswa : {data.nim[i]}")
-        print(f"Nilai UTS     : {data.uts[i]}")
-        print(f"Nilai UAS     : {data.uas[i]}")
-        print(f"Nilai TUGAS   : {data.tugas[i]}")
-```
-### Penjelasan 
-Di program ini terdapat modul yg menyambungkan `view_nilai.py` kedalam file program `daftar_nilai.py` 
-dengan syntax `from model import daftar_nilai`. Fungsi ny mirip seperti `input = "[(C)ari]"`, tapi fitur ini menampilkan
-seluruh data yg sudah di input.
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/cbac0eaedd66045259d5d8170e5f1de5c1f09817/Image/tampilkan%20table.jpg)
 
-### 4. `input_nilai.py` berisi code yg berfungsi untuk menginput data yaitu nilai
+Deskripsi: Fungsi ini bertugas untuk menampilkan data dalam format tabel.
 
-``` Python
-from model import daftar_nilai
+Proses:
 
-data = daftar_nilai.Data_mahasiswa()
+Lebar Kolom: Menghitung lebar kolom berdasarkan panjang data terpanjang di setiap kolom menggunakan zip(*data) untuk mentransposisi data.
 
-def nilai():
-        print("Input Nilai")
-        print("="*15)
-        input_nama = input("Masukan Nama   : ")
-        if input_nama in data.nama:
-            index = data.nama.index(input_nama)
-            data.uts[index]     = int(input("Nilai UTS      : "))
-            data.uas[index]     = int(input("Nilai UAS      : "))
-            data.tugas[index]   = int(input("Nilai Tugas    : "))
+Header Tabel: Mencetak header tabel dengan format yang sesuai dan garis pemisah.
 
-            print("\nData nilai berhasil di input!")
-        else:
-            print("NAMA {0} TIDAK ADA! / ANDA BELUM MENAMBAH DATA".format(input_nama))
-```
-### Penjelasan 
-Di program ini terdapat modul yg menyambungkann `input_nilai.py` kedalam file program `daftar_nilai.py` 
-dengan syntax `from model import daftar_nilai`. Fitur ini khusus untuk menginput nilai
+Baris Tabel: Mencetak setiap baris data dengan format yang sesuai, menggunakan enumerate untuk mendapatkan indeks dan item.
 
-#### Tampilan output `input_nilai.py` :
-![6](Picture/Gambar6.png)
+- Class " Process "
+
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/dcc49aba8a051f8459b3959fd85da8e8cfe64531/Image/class%20process.jpg)
+
+Deskripsi: Metode ini adalah statis, yang berarti dapat dipanggil tanpa harus membuat instance dari class Process. Ia menerima satu parameter, yaitu objek Data.
+
+Proses Validasi:
+
+Nama: Memeriksa apakah nama hanya terdiri dari huruf. Jika tidak, akan mengangkat ValueError dengan pesan yang sesuai.
+
+NIM: Memastikan bahwa NIM hanya berisi angka. Jika tidak, akan mengangkat ValueError.
+
+Nilai UAS: Memeriksa apakah nilai UAS adalah angka. Jika tidak, akan mengangkat ValueError.
+
+Konversi dan Rentang: Mengonversi nilai UAS dari string ke integer dan memeriksa apakah nilainya berada dalam rentang 0 hingga 100. Jika tidak, akan mengangkat ValueError.
+
+Penanganan Kesalahan: Jika terjadi kesalahan selama validasi, pesan kesalahan akan dicetak, dan metode akan mengembalikan False. Jika semua validasi berhasil, metode akan mengembalikan 
+
+True
