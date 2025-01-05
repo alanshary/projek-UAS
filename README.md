@@ -7,7 +7,7 @@
 | **NIM** | 312410315 |
 | **Kelas** | TI.24.A.4 |
 | **Mata Kuliah** | Bahasa Pemrograman |
-| **Link vidio Penjelasan** | https://www.youtube.com/watch?v=8MzmLtOLDOk |
+| **Link vidio Penjelasan** | ga usah liat liat |
 
 
 ![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/71de6bd92acac08a813c4d8179a0606b5037b7cd/Image/tugas.jpg)
