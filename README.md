@@ -14,7 +14,7 @@
 
 - Class " Data " 
  
-![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/b4c7185e51c5fabb70c80fe6a282a6c0386b8a15/Image/class%20data.jpg)
+![uas data](https://github.com/user-attachments/assets/39fcce41-8111-4e0e-88f8-67bce48451b1)
 
 Deskripsi: Class Data digunakan untuk menyimpan informasi tentang mahasiswa, termasuk nama, NIM (Nomor Induk Mahasiswa), dan nilai UAS.
 
@@ -30,7 +30,7 @@ Atribut: Atribut self.nama, self.nim, dan self.nilai_uas menyimpan nilai yang di
 
 - Class " View " 
 
-![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/804b9c41bc554e0ff189d6b493c5b034950ff675/Image/class%20view.jpg)
+![uas view](https://github.com/user-attachments/assets/12283e86-bebb-4c53-90ec-b2e6bf088759)
 
 Deskripsi: Class View bertanggung jawab untuk interaksi dengan pengguna, termasuk pengambilan input dan menampilkan output.
 
@@ -54,7 +54,7 @@ Memanggil fungsi tampilkan_tabel untuk menampilkan data dalam format tabel.
 
 - Fungsi " Tampilkan Table "
 
-![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/cbac0eaedd66045259d5d8170e5f1de5c1f09817/Image/tampilkan%20table.jpg)
+![uas](https://github.com/user-attachments/assets/fe1341f5-cc36-4179-b6d6-71b6d90467c0)
 
 Deskripsi: Fungsi ini bertugas untuk menampilkan data dalam format tabel.
 
@@ -68,7 +68,7 @@ Baris Tabel: Mencetak setiap baris data dengan format yang sesuai, menggunakan e
 
 - Class " Process "
 
-![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/dcc49aba8a051f8459b3959fd85da8e8cfe64531/Image/class%20process.jpg)
+![uas process](https://github.com/user-attachments/assets/2acb1f56-ac26-4f71-8a83-0efb39c42d50)
 
 Deskripsi: Metode ini adalah statis, yang berarti dapat dipanggil tanpa harus membuat instance dari class Process. Ia menerima satu parameter, yaitu objek Data.
 
