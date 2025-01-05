@@ -5,7 +5,7 @@
 | -------- | --- |
 | **Nama** | Zaid Al Anshary |
 | **NIM** | 312410315 |
-| **Kelas** | TI.22.A.4 |
+| **Kelas** | TI.24.A.4 |
 | **Mata Kuliah** | Bahasa Pemrograman |
 | **Link vidio Penjelasan** | https://www.youtube.com/watch?v=8MzmLtOLDOk |
 
