@@ -10,7 +10,7 @@
 | **Link vidio process** | https://youtube.com/shorts/RY74SR9VR-s?si=ZsVx4bLuXEOUNwea |
 
 
-![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/71de6bd92acac08a813c4d8179a0606b5037b7cd/Image/tugas.jpg)
+![Screenshot (51)](https://github.com/user-attachments/assets/95f89eeb-a464-45aa-8688-924c2ae38e27)
 
 - Class " Data " 
  
